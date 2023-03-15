@@ -1,0 +1,22 @@
+{{!-- Portrait --}}
+    <div>
+        <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="110" width="110"/>
+    </div>
+    {{!-- Identity --}}
+    <div class="box-column margin-left-20">
+        <h2><input name="name" type="text" value="{{actor.name}}" placeholder="actor name"/></h2>
+        <table>
+            <tr>
+                <td class="font-medium" style="width: 170px;">Spirit force</td>
+                <td class="cell-center"><input name="data.force" type="number" value="{{data.system.force}}" placeholder="" style="width: 40px; display: inline-block;"data-type="Number"/></td>
+            </tr>
+        </table>
+
+        <select  class="selectcategory"  name="data.category"  data-type="String">
+            {{#select data.system.category}}
+                {{#each data.system.categories as |category key|}}
+                <option  value="{{key}}">{{category.label}}</option>
+                {{/each}}
+            {{/select}}
+        </select>
+    </div>

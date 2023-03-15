@@ -1,0 +1,29 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <h2><input name="name" type="text" value="{{item.name}}" placeholder="power name" style="width: 250px;"/></h2>
+
+    <table style="width: 340px;">
+        <tr>
+            <th>{{localize 'SR3.item.equipped'}}</th>
+            <th>{{localize 'SR3.item.index'}}</th>
+            <th>{{localize 'SR3.item.type'}}</th>
+            <th>{{localize 'SR3.item.conceal'}}</th>
+            <th>{{localize 'SR3.item.weight'}}</th>
+        </tr>
+        <tr>
+            <td class="cell-center"><input type="checkbox" name="data.equipped" {{checked  data.system.equipped}}></td>
+            <td class="cell-center"><input name="data.index.value" type="number" value="{{data.system.index.value}}" placeholder="" style="width: 40px;"/></td>
+            <td class="cell-center">
+                <select  class="selecttype"  name="data.type.value"  data-type="String">
+                    {{#select data.system.type.value}}
+                        {{#each data.system.types as |type key|}}
+                        <option  value="{{key}}">{{type.value}}</option>
+                        {{/each}}
+                    {{/select}}
+                </select>
+            </td>
+            <td class="cell-center"><input name="data.conceal.value" type="number" value="{{data.system.conceal.value}}" placeholder="" style="width: 40px;"/></td>
+            <td class="cell-center"><input name="data.weight.value" type="number" value="{{data.system.weight.value}}" placeholder="" style="width: 40px;"/></td>
+        </tr>
+    </table>
+    <textarea style="width: 350px;" name="data.effect.value" id="" cols="25" rows="3">{{data.system.effect.value}}</textarea>
+</form>

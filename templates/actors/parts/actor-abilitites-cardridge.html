@@ -1,0 +1,37 @@
+<div class="box">
+    {{#each data.system.abilities as |ability key|}}
+    <table>
+        <tr class="sr3-cardridge-th">
+            <th>{{ability.label}}</th>
+        </tr>
+        <tr class="icon-row">
+            <td class="cell-center">
+                <span class="font-large font-bold">{{ability.total}}</span>
+                <span><a class="roll-skill roll-icon" data-skill-name="{{ability.label}}" data-skill-value="{{ability.total}}"><i class="fas fa-dice"></i></a></span>
+            </td>
+        </tr>
+    </table>
+    {{/each}}
+    <table>
+        <tr class="sr3-cardridge-th">
+            <th>{{localize 'SR3.actor.essence'}}</th>
+        </tr>
+        <tr class="icon-row">
+            <td class="cell-center">
+                <span class="font-large font-bold">{{data.system.essence.value}}</span>
+                <span><a class="roll-skill roll-icon" data-skill-name="essence" data-skill-value="{{data.system.essence.value}}" title="Roll skill"><i class="fas fa-dice"></i></a></span>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr class="sr3-cardridge-th">
+            <th>{{localize 'SR3.actor.magic'}}</th>
+        </tr>
+        <tr class="icon-row">
+            <td class="cell-center">
+                <span class="font-large font-bold">{{data.system.magic.value}}</span>
+                <span><a class="roll-skill roll-icon" data-skill-name="magic" data-skill-value="{{data.system.magic.value}}" title="Roll skill"><i class="fas fa-dice"></i></a></span>
+            </td>
+        </tr>
+    </table>
+</div>

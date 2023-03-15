@@ -1,0 +1,20 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <h2><input name="name" type="text" value="{{item.name}}" placeholder="weapon name" style="width: 250px;"/></h2>
+    <table style="width: 300px;">
+        <tr>
+            <th></th>
+            <th>{{localize 'SR3.item.armor.balistic'}}</th>
+            <th>{{localize 'SR3.item.armor.impact'}}</th>
+            <th>{{localize 'SR3.item.conceal'}}</th>
+            <th>{{localize 'SR3.item.weight'}}</th>
+        </tr>
+        <tr>
+            <td class="cell-center"><input type="checkbox" name="data.equipped" {{checked  data.system.equipped}}></td>
+            <td class="cell-center"><input name="data.balistic.value" type="number" value="{{data.system.balistic.value}}" placeholder="" style="width: 40px;"/></td>
+            <td class="cell-center"><input name="data.impact.value" type="number" value="{{data.system.impact.value}}" placeholder="" style="width: 40px;"/></td>
+            <td class="cell-center"><input name="data.conceal.value" type="number" value="{{data.system.conceal.value}}" placeholder="" style="width: 40px;"/></td>
+            <td class="cell-center"><input name="data.weight.value" type="number" value="{{data.system.weight.value}}" placeholder="" style="width: 40px;"/></td>
+        </tr>
+    </table>
+    <textarea style="width: 300px;" name="data.accessories.value" id="" cols="25" rows="5">{{data.system.accessories.value}}</textarea>
+</form>

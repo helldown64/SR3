@@ -1,0 +1,159 @@
+.box{
+    display: flex;
+    justify-content: space-around;
+}
+.box-left{
+    display: flex;
+}
+.box-column {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+.margin-left-20{
+    margin-left: 20px;
+}
+.cell-center{
+    text-align: center;
+}
+.cell-right{
+    text-align: right;
+}
+.cell-left{
+    text-align: left;
+}
+.hover:hover{
+    cursor: pointer;
+}
+.font-xsmall{
+    font-size: x-small;
+}
+.font-small{
+    font-size: small;
+}
+.font-medium{
+    font-size: medium;
+}
+.font-large{
+    font-size: large;
+}
+.font-bold{
+    font-weight: bold;
+}
+.edit-icon{
+    visibility: hidden;
+}
+.delete-icon{
+    visibility: hidden;
+}
+.roll-icon{
+    visibility: hidden;
+}
+.icon-row:hover .edit-icon{
+    visibility:visible;
+}
+.icon-row:hover .delete-icon{
+    visibility:visible;
+}
+.icon-row:hover .roll-icon{
+    visibility:visible;
+}
+th{
+    /*background-color: #263238;
+    color:#BDBDBD;*/
+    background-color: #616161;
+    color:#BDBDBD;
+}
+.tab-header{
+    color:#263238
+}
+.item-link{
+    text-decoration: none;
+    color: #263238;
+}
+.item-link:hover{
+    cursor: pointer;
+    font-weight: bold;
+}
+.sr-dice-roll-max{
+    font-size: large;
+    font-weight: bold;
+    /*color: #18520b;*/
+    color: #33691E;
+}
+.sr-dice-roll{
+    font-size: large;
+    font-weight: bold;
+}
+.sr-dice-roll-min{
+    font-size: large;
+    font-weight: bold;
+    /*color: #aa0200;*/
+    color:#DD2C00;
+}
+.sr3-dice:hover{
+    color: #263238;
+}
+/*COLORS*/
+/*Monitor state table header*/
+.sr3-monitor-th>th{
+    background-color: #424242;
+}
+/*abilities cardridge*/
+.sr3-cardridge-th>th{
+    background-color: #424242;
+}
+/*character nav*/
+.sr3char-nav{
+    background-color: #263238;
+}
+/*character nav item*/
+.sr3char-nav-link{
+    color:#9E9E9E;
+}
+/*Character nav item active*/
+.sr3char-nav-link.active{
+    text-shadow: none!important;
+    color:#EEEEEE;
+}
+/*Character nav item hover*/
+.sr3char-nav-link:hover{
+    text-shadow: none!important;
+    color:#D7CCC8;
+}
+
+/*Character fight table header*/
+.sr3char-item-fi-th>th{
+    background-color: #9E9E9E;
+    color:#212121;
+}
+/*Character abilities table header*/
+.sr3char-item-ab-th>th{
+    background-color: #9E9E9E;
+    color:#212121;
+}
+/*Character skills table header*/
+.sr3char-item-sk-th>th{
+    background-color: #9E9E9E;
+    color:#212121;
+}
+/*Character weapon table header*/
+.sr3char-item-wp-th>th{
+    background-color: #9E9E9E;
+    color:#212121;
+}
+/*Character equipement table header*/
+.sr3char-item-eq-th>th{
+    background-color: #9E9E9E;
+    color:#212121;
+}
+/*Character cyberware table header*/
+.sr3char-item-cy-th>th{
+    background-color: #9E9E9E;
+    color:#212121;
+}
+/*Character magic table header*/
+.sr3char-item-ma-th>th{
+    background-color: #9E9E9E;
+    color:#212121;
+}

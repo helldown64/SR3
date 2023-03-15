@@ -1,0 +1,21 @@
+<table>
+    <tr class="font-small sr3-monitor-th">
+        <th style="width: 100px;"></th>
+        <th class="cell-center">{{localize 'SR3.actor.header.l'}}</th>
+        <th class="cell-center"></th>
+        <th class="cell-center">{{localize 'SR3.actor.header.m'}}</th>
+        <th class="cell-center"></th>
+        <th class="cell-center"></th>
+        <th class="cell-center">{{localize 'SR3.actor.header.s'}}</th>
+        <th class="cell-center"></th>
+        <th class="cell-center"></th>
+        <th class="cell-center"></th>
+        <th class="cell-center">{{localize 'SR3.actor.header.f'}}</th>
+    </tr>
+    <tr class="font-small">
+        <td class="cell-center" style="width: 100px !important;">{{localize 'SR3.actor.header.stun'}}</td>
+    {{#each actor.system.condition.stun as |case key|}}
+    <td class="cell-center"><input type="checkbox" name="data.condition.stun.{{key}}.value" {{checked  case.value}} style="width: 20px; height: 20px;"></td>
+    {{/each}}
+    </tr>
+</table>

@@ -1,0 +1,83 @@
+{{!-- WEAPONS --}}
+    <h3>Weapons</h3>
+    <table style="width: 280px;">
+        <tr>
+            <td style="width: 250px;" class="cell-left">{{localize 'SR3.actor.vehicule.drive'}}</td>
+            <td class="cell-center">{{data.system.drive.value}}</td>
+            <td class="cell-center" style="width: 25px;">
+                <a class="roll-skill" data-skill-name="{{data.system.drive.label}}" data-skill-value="{{data.system.drive.value}}" title="Roll skill"><i class="fas fa-dice"></i></a>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 250px;" class="cell-left">{{localize 'SR3.actor.vehicule.artillery'}}</td>
+            <td class="cell-center">{{data.system.artillery.value}}</td>
+            <td class="cell-center" style="width: 25px;">
+                <a class="roll-skill" data-skill-name="{{data.system.artillery.label}}" data-skill-value="{{data.system.artillery.value}}" title="Roll skill"><i class="fas fa-dice"></i></a>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr class="font-small">
+            {{!--<th style="width: 32px;"></th>--}}
+            <th>name</th>
+            <th></th>
+            <th style="width: 60px;">{{localize 'SR3.item.damage'}}</th>
+            <th style="width: 60px;">{{localize 'SR3.item.ranged.mode'}}</th>
+            <th style="width: 60px;">{{localize 'SR3.item.ranged.cap'}}</th>
+            <th style="width: 60px;">{{localize 'SR3.item.conceal'}}</th>
+            <th style="width: 60px;">{{localize 'SR3.item.weight'}}</th>
+            <th style="width: 120px;">{{localize 'SR3.item.ranged.range'}}</th>
+            <th style="width: 200px; margin-left: 10px;">{{localize 'SR3.item.special'}}</th>
+        </tr>
+    {{#each data.items as |item key|}}
+    {{#if (eq item.type "rangedweapon")}}
+        <tr class="item icon-row" data-item-id="{{item._id}}">
+            {{!-- 
+                <td><img src="{{item.img}}" title="{{item.name}}" height="32" width="32"/></td>
+                --}}
+            
+            
+            {{#if item.system.equipped}}
+            <td class="cell-left item-link edit-item"><i class="fas fa-check"></i>{{item.name}}</td>
+            {{else}}
+            <td class="cell-left item-link edit-item">{{item.name}}</td>
+            {{/if}}
+            <td class="cell-center" style="width: 20px;">
+                <a class="delete-item delete-icon" title="Delete Item"><i class="fas fa-trash"></i></a>
+            </td>
+            <td class="cell-center">{{item.system.dmg.value}}</td>
+            <td class="cell-center">{{item.system.mode.value}}</td>
+            <td class="cell-center">{{item.system.capacity.value}}</td>
+            <td class="cell-center">{{item.system.conceal.value}}</td>
+            <td class="cell-center">{{item.system.weight.value}}</td>
+            <td class="cell-center">{{item.system.range.value}}</td>
+            <td>{{item.system.accessories.value}}</td>
+        </tr>
+    {{/if}}
+    {{/each}}
+    </table>
+    <hr>
+    <table>
+        <tr>
+            <th>{{localize 'SR3.item.name'}}</th>
+            <th></th>
+            <th>{{localize 'SR3.item.vehicule.cf'}}</th>
+            <th>{{localize 'SR3.item.index'}}</th>
+            <th>{{localize 'SR3.item.weight'}}</th>
+            <th style="width: 300px;">{{localize 'SR3.item.effect'}}</th>
+        </tr>
+        {{#each data.items as |item key|}}
+        {{#if (eq item.type "vehiculemod")}}
+        <tr class="item icon-row" data-item-id="{{item._id}}">
+            <td class="cell-left item-link edit-item">{{item.name}}</td>
+            <td class="cell-center" style="width: 20px;">
+                <a class="delete-item delete-icon" title="Delete Item"><i class="fas fa-trash"></i></a>
+            </td>
+            <td class="cell-center">{{item.system.cf.value}}</td>
+            <td class="cell-center">{{item.system.index.value}}</td>
+            <td class="cell-center">{{item.system.weight.value}}</td>
+            <td class="cell-left">{{item.system.effect.value}}</td>
+        </tr>
+        {{/if}}
+        {{/each}}
+    </table>

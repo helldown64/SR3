@@ -1,0 +1,17 @@
+    {{!-- Portrait --}}
+    <div>
+        <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="135" width="135"/>
+    </div>
+    {{!-- Identity --}}
+    <div class="box-column margin-left-20">
+        <h1><input name="name" type="text" value="{{actor.name}}" placeholder="actor name"/></h1>
+        <h2><input name="data.streetname" type="text" value="{{data.system.streetname}}" placeholder="street name"/></h2>
+        <select  class="selectrace"  name="data.race.value"  data-type="String">
+            {{#select data.system.race.value}}
+                {{#each data.system.races as |race key|}}
+                <option  value="{{key}}">{{race.label}}</option>
+                {{/each}}
+            {{/select}}
+        </select>
+    </div>
+    

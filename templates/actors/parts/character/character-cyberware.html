@@ -1,0 +1,23 @@
+<table>
+    <tr class="sr3char-item-cy-th">
+        <th style="width: 120px;">{{localize 'SR3.item.name'}}</th>
+        <th></th>
+        <th style="width: 60px;">{{localize 'SR3.item.index'}}</th>
+        <th style="width: 60px;">{{localize 'SR3.item.cyberware.cost'}}</th>
+        <th style="width: 200px;">{{localize 'SR3.item.effect'}}</th>
+    </tr>
+    {{#each data.items as |item key|}}
+    {{#if (eq item.type "cyberware")}}
+    <tr class="item icon-row" data-item-id="{{item._id}}">
+        <td class="cell-left item-link edit-item">{{item.name}}</td>
+        <td class="cell-center" style="width: 20px;">
+            <a class="delete-item delete-icon" title="Delete Item"><i class="fas fa-trash"></i></a>
+        </td>
+        <td class="cell-center">{{item.system.index.value}}</td>
+        <td class="cell-center">{{item.system.cost.value}}</td>
+        <td>{{item.system.effect.value}}</td>
+    </tr>
+
+    {{/if}}
+    {{/each}}
+</table>

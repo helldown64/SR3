@@ -1,0 +1,58 @@
+<div class="flexrow">
+    <div>
+        <table style="width:400px">
+            <tr class="sr3char-item-sk-th">
+                <th>{{localize 'SR3.actor.tab.skills'}}</th>
+                <th></th>
+                <th>Value</th>
+                <th></th>
+            </tr>
+            {{#each data.items as |item key|}}
+            {{#if (eq item.type "skill")}}
+            <tr class="item icon-row" data-item-id="{{item._id}}">
+                <td class="cell-left item-link edit-item" style="width: 250px;">{{item.name}}</td>
+                <td class="cell-center" style="width: 15px;">
+                    {{!--
+                        <a class="edit-item edit-icon" title="Edit Item"><i class="fas fa-edit"></i></a>
+                    --}}
+                    
+                    <a class="delete-item delete-icon" title="Delete Item"><i class="fas fa-trash"></i></a>
+                </td>
+                <td class="cell-center" style="width: 25px;">{{item.system.value}}</td>
+                <td class="cell-center" style="width: 25px;">
+                <a class="roll-skill roll-icon" data-skill-name="{{item.name}}" data-skill-value="{{item.system.value}}" title="Roll skill"><i class="fas fa-dice"></i></a>
+                </td>
+            </tr>
+            {{/if}}
+            {{/each}}
+        </table>
+    </div>
+    <div>
+        <table style="width:400px">
+            <tr class="sr3char-item-sk-th">
+                <th>{{localize 'SR3.actor.tab.knowledges'}}</th>
+                <th></th>
+                <th>Value</th>
+                <th></th>
+            </tr>
+            {{#each data.items as |item key|}}
+            {{#if (eq item.type "knowledge")}}
+            <tr class="item icon-row" data-item-id="{{item._id}}">
+                <td class="cell-left item-link edit-item" style="width: 250px;">{{item.name}}</td>
+                <td class="cell-center" style="width: 15px;">
+                    {{!--
+                        <a class="edit-item edit-icon" title="Edit Item"><i class="fas fa-edit"></i></a>
+                    --}}
+                    
+                    <a class="delete-item delete-icon" title="Delete Item"><i class="fas fa-trash"></i></a>
+                </td>
+                <td class="cell-center" style="width: 25px;">{{item.system.value}}</td>
+                <td class="cell-center" style="width: 25px;">
+                <a class="roll-skill roll-icon" data-skill-name="{{item.name}}" data-skill-value="{{item.system.value}}" title="Roll skill"><i class="fas fa-dice"></i></a>
+                </td>
+            </tr>
+            {{/if}}
+            {{/each}}
+        </table>
+    </div>
+</div>

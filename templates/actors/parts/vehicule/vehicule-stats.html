@@ -1,0 +1,76 @@
+
+    <table style="width: 300px;">
+        <tr>
+            <td>{{localize 'SR3.actor.vehicule.handeling'}}</td>
+            <td class="cell-center"><input name="data.handeling.value" type="text" value="{{data.system.handeling.value}}" style="width: 50px;"/></td>
+        </tr>
+        <tr>
+            <td>{{localize 'SR3.actor.vehicule.speed'}}</td>
+            <td class="cell-center"><input name="data.speed.value" type="text" value="{{data.system.speed.value}}" style="width: 60px;"/></td>
+        </tr>
+        <tr>
+            <td>{{localize 'SR3.actor.vehicule.accleration'}}</td>
+            <td class="cell-center"><input name="data.accel.value" type="text" value="{{data.system.accel.value}}" style="width: 40px;"/></td>
+        </tr>
+        <tr>
+            <td>{{localize 'SR3.actor.vehicule.body'}}</td>
+            <td class="cell-center"><input name="data.body.value" type="number" value="{{data.system.body.value}}" style="width: 40px;"/></td>
+        </tr>
+        <tr>
+            <td>{{localize 'SR3.actor.vehicule.shielding'}}</td>
+            <td class="cell-center"><input name="data.armor.value" type="number" value="{{data.system.armor.value}}" style="width: 40px;"/></td>
+        </tr>
+        <tr>
+            <td>{{localize 'SR3.actor.vehicule.signature'}}</td>
+            <td class="cell-center"><input name="data.sig.value" type="number" value="{{data.system.sig.value}}" style="width: 40px;"/></td>
+        </tr>
+        <tr>
+            <td>{{localize 'SR3.actor.vehicule.auto'}}</td>
+            <td class="cell-center"><input name="data.auto.value" type="number" value="{{data.system.auto.value}}" style="width: 40px;"/></td>
+        </tr>
+        <tr>
+            <td>{{localize 'SR3.actor.vehicule.pilot'}}</td>
+            <td class="cell-center"><input name="data.pilot.value" type="number" value="{{data.system.pilot.value}}" style="width: 40px;"/></td>
+        </tr>
+        <tr>
+            <td>{{localize 'SR3.actor.vehicule.sensor'}}</td>
+            <td class="cell-center"><input name="data.sensor.value" type="number" value="{{data.system.sensor.value}}" style="width: 40px;"/></td>
+        </tr>
+        <tr>
+            <td>{{localize 'SR3.actor.vehicule.cargo'}}</td>
+            <td class="cell-center"><input name="data.cargo.value" type="number" value="{{data.system.cargo.value}}" style="width: 40px;"/></td>
+        </tr>
+        <tr>
+            <td>{{localize 'SR3.actor.vehicule.load'}}</td>
+            <td class="cell-center"><input name="data.load.value" type="number" value="{{data.system.load.value}}" style="width: 40px;"/></td>
+        </tr>
+        <tr>
+            <td>{{localize 'SR3.actor.init.label'}} {{localize 'SR3.actor.init.ai'}}</td>
+            <td class="cell-center"><input name="data.initiatives.ai.value" type="text" value="{{data.system.initiatives.ai.value}}" style="width: 80px;"/></td>
+        </tr>
+        <tr>
+            <td>{{localize 'SR3.actor.init.label'}} {{localize 'SR3.actor.init.rigger'}}</td>
+            <td class="cell-center"><input name="data.initiatives.rigger.value" type="text" value="{{data.system.initiatives.rigger.value}}" style="width: 80px;"/></td>
+        </tr>
+        <tr>
+            <td>{{localize 'SR3.actor.init.label'}}</td>
+            <td class="cell-center">
+                <select  class="selectinit"  name="data.initiative.value"  data-type="String" style="width: 80px;">
+                    {{#select data.system.initiative.value}}
+                        {{#each data.system.initiatives as |init key|}}
+                        <option  value="{{init.value}}">{{init.label}}</option>
+                        {{/each}}
+                    {{/select}}
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>{{localize 'SR3.actor.vehicule.drive'}}</td>
+            <td class="cell-center"><input name="data.drive.value" type="number" value="{{data.system.drive.value}}" placeholder="" style="width: 40px;"data-type="Number"/></td>
+        </tr>
+        <tr>
+            <td>{{localize 'SR3.actor.vehicule.artillery'}}</td>
+            <td class="cell-center"><input name="data.artillery.value" type="number" value="{{data.system.artillery.value}}" placeholder="" style="width: 40px;"data-type="Number"/></td>
+        </tr>
+    </table>
+

@@ -1,0 +1,70 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="box-left">
+        {{!-- Portrait --}}
+        <div>
+            <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="110" width="110"/>
+        </div>
+        {{!-- IMMATRICULATION --}}
+        <div class="box-column margin-left-20">
+            <h1><input name="name" type="text" value="{{actor.name}}" placeholder="actor name"/></h1>
+            <h2><input name="data.model.value" type="text" value="{{data.system.model.value}}" placeholder="model"/></h2>
+            <h2><input name="data.registration.value" type="text" value="{{data.system.registration.value}}" placeholder="registration"/></h2>
+        </div>
+        <div style="width: 400px;">
+            {{> "systems/SR3/templates/actors/parts/actor-monitor-physic.html"}}
+        </div>
+    </div>
+    <hr>
+    
+    <table class="">
+        <tr class="sr3-cardridge-th">
+            <th>{{localize 'SR3.actor.vehicule.handeling'}}</th>
+            <th>{{localize 'SR3.actor.vehicule.speed'}}</th>
+            <th>{{localize 'SR3.actor.vehicule.accl'}}</th>
+            <th>{{localize 'SR3.actor.vehicule.body'}}</th>
+            <th>{{localize 'SR3.actor.vehicule.shield'}}</th>
+            <th>{{localize 'SR3.actor.vehicule.sig'}}</th>
+            <th>{{localize 'SR3.actor.vehicule.auto'}}</th>
+            <th>{{localize 'SR3.actor.vehicule.pilot'}}</th>
+            <th>{{localize 'SR3.actor.vehicule.sensor'}}</th>
+            <th>{{localize 'SR3.actor.vehicule.cargo'}}</th>
+            <th>{{localize 'SR3.actor.vehicule.load'}}</th>
+        </tr>
+        <tr class="cell-center font-bold font-medium">
+            <td>{{data.system.handeling.value}}</td>
+            <td>{{data.system.speed.value}}</td>
+            <td>{{data.system.accel.value}}</td>
+            <td>{{data.system.body.value}}</td>
+            <td>{{data.system.armor.value}}</td>
+            <td>{{data.system.sig.value}}</td>
+            <td>{{data.system.auto.value}}</td>
+            <td>{{data.system.pilot.value}}</td>
+            <td>{{data.system.sensor.value}}</td>
+            <td>{{data.system.cargo.value}}</td>
+            <td>{{data.system.load.value}}</td>
+        </tr>
+    </table>
+    <hr>
+    {{!-- ROLL MANAGER --}}
+    {{> "systems/SR3/templates/actors/parts/actor-rollmanager.html"}}
+    <hr>
+
+    <section class="section section--tabs flexshrink sr3char-nav">
+        <nav class="sheet-tabs tabs" data-group="primary">
+            <a class="item font-medium font-bold tab-header sr3char-nav-link" data-tab="stats" data-group="primary">{{localize 'SR3.actor.tab.stat'}}</a>
+            <a class="item font-medium font-bold tab-header sr3char-nav-link" data-tab="skills" data-group="primary">{{localize 'SR3.actor.tab.equipement'}}</a>
+        </nav>
+    </section>
+    {{!-- Character Sheet Body --}}
+    <section class="sheet-body section--tabs-content">
+        {{!-- Statistiques Tab --}}
+        <div class="tab stats" data-group="primary" data-tab="stats" >
+            {{> "systems/SR3/templates/actors/parts/vehicule/vehicule-stats.html"}}
+        </div>
+        {{!-- Equipement Tab  --}}
+        <div class="tab skills" data-group="primary" data-tab="skills">
+            {{> "systems/SR3/templates/actors/parts/vehicule/vehicule-equipement.html"}}
+        </div>
+    </section>
+
+</form>

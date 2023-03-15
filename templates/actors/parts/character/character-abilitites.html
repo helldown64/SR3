@@ -1,0 +1,34 @@
+<div class="flexcol">
+    <table>
+        <tr class="sr3char-item-ab-th">
+            <th>{{localize 'SR3.actor.character.abilities.name'}}</th>
+            <th>{{localize 'SR3.actor.character.abilities.base'}}</th>
+            <th>{{localize 'SR3.actor.character.abilities.racial'}}</th>
+            <th>{{localize 'SR3.actor.character.abilities.xp'}}</th>
+            <th>{{localize 'SR3.actor.character.abilities.cyber'}}</th>
+            <th>{{localize 'SR3.actor.character.abilities.magic'}}</th>
+        </tr>
+
+        {{#each data.system.abilities as |abilitie key|}}
+        <tr>
+            <td class="cell-right font-bold">{{abilitie.label}}</td>
+            <td class="cell-center"><input name="data.abilities.{{key}}.base" type="text" value="{{abilitie.base}}" placeholder="" style="width: 40px;" data-dtype="Number"/></td>
+            <td class="cell-center">{{abilitie.Bracial}}</td>
+            <td class="cell-center"><input name="data.abilities.{{key}}.xp" type="text" value="{{abilitie.xp}}" placeholder="" style="width: 40px;" data-dtype="Number"/></td>
+            <td class="cell-center"><input name="data.abilities.{{key}}.Bcyber" type="text" value="{{abilitie.Bcyber}}" placeholder="" style="width: 40px;" data-dtype="Number"/></td>
+            <td class="cell-center"><input name="data.abilities.{{key}}.Bmagic" type="text" value="{{abilitie.Bmagic}}" placeholder="" style="width: 40px;" data-dtype="Number"/></td>
+        </tr>
+        {{/each}}
+        <tr>
+            <td class="cell-right font-bold">{{localize 'SR3.actor.essence'}}</td>
+            {{!--
+            <td class="cell-center"><input name="data.essence.value" type="text" value="{{data.system.essence.value}}" placeholder="" style="width: 40px;" data-dtype="Number"/></td>
+            --}}
+            <td class="cell-center">{{data.system.essence.value}}</td>
+        </tr>
+        <tr>
+            <td class="cell-right font-bold">{{localize 'SR3.actor.magic'}}</td>
+            <td class="cell-center"><input name="data.magic.value" type="text" value="{{data.system.magic.value}}" placeholder="" style="width: 40px;" data-dtype="Number"/></td>
+        </tr>
+    </table>
+</div>

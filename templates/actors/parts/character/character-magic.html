@@ -1,0 +1,59 @@
+<div class="flexcol">
+    <table>
+        <tr class="sr3char-item-ma-th">
+            <th style="width: 200px;">{{localize 'SR3.item.spells.name'}}</th>
+            <th></th>
+            <th>index</th>
+            <th>Type</th>
+            <th>Action</th>
+            <th>Portée</th>
+            <th>Durée</th>
+        </tr>
+        {{#each data.items as |item key|}}
+        {{#if (eq item.type "spell")}}
+        <tr class="item icon-row" data-item-id="{{item._id}}" rel="tooltip" data-toggle="tooltip" title="{{item.system.description.value}}">
+            <td class="cell-left item-link edit-item">{{item.name}}</td>
+            <td class="cell-center" style="width: 15px;">       
+                <a class="delete-item delete-icon" title="Delete Item"><i class="fas fa-trash"></i></a>
+            </td>
+            <td class="cell-center">{{item.system.index.value}}</td>
+            <td class="cell-center">{{item.system.typelabel.value}}</td>
+            <td class="cell-center">{{item.system.actionlabel.value}}</td>
+            <td class="cell-center">{{item.system.rangelabel.value}}</td>
+            <td class="cell-center">{{item.system.durationlabel.value}}</td>
+        </tr>
+        {{/if}}
+        {{/each}}
+    </table>
+ 
+    <table>
+        <tr class="sr3char-item-ma-th">
+            <th style="width: 200px;">{{localize 'SR3.item.foci.name'}}</th>
+            <th></th>
+            <th>Index</th>
+            <th>Type</th>
+            <th>Conceal.</th>
+            <th>Weight</th>
+            <th style="width: 400px;">Effects</th>
+        </tr>
+        {{#each data.items as |item key|}}
+        {{#if (eq item.type "foci")}}
+        <tr class="item icon-row" data-item-id="{{item._id}}">
+            {{#if item.system.equipped}}
+            <td class="cell-left item-link edit-item"><i class="fas fa-check"></i>{{item.name}}</td>
+            {{else}}
+            <td class="cell-left item-link edit-item">{{item.name}}</td>
+            {{/if}}
+            <td class="cell-center" style="width: 15px;">       
+                <a class="delete-item delete-icon" title="Delete Item"><i class="fas fa-trash"></i></a>
+            </td>
+            <td class="cell-center">{{item.system.index.value}}</td>
+            <td class="cell-center">{{item.system.typelabel.value}}</td>
+            <td class="cell-center">{{item.system.conceal.value}}</td>
+            <td class="cell-center">{{item.system.weight.value}}</td>
+            <td class="cell-left">{{item.system.effect.value}}</td>
+        </tr>
+        {{/if}}
+        {{/each}}
+    </table>
+</div>

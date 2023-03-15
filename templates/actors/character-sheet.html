@@ -1,0 +1,89 @@
+<form class="{{cssClass}}" autocomplete="off">
+    {{!--
+        <div class="box-left">
+            {{> "systems/SR3/templates/actors/parts/character/character-identity.html"}}
+            <div>
+                {{> "systems/SR3/templates/actors/parts/actor-monitor-physic.html"}}
+                {{> "systems/SR3/templates/actors/parts/actor-monitor-stun.html"}}
+            </div>
+        </div>
+    --}}
+    
+        <header class="">
+            <div class="flexrow">
+                <div class="flex1">
+                    <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="135" width="135"/>
+                </div>
+                <div class="flexcol flex1">
+                    <h1><input name="name" type="text" value="{{actor.name}}" placeholder="actor name"/></h1>
+                    <h2><input name="data.streetname" type="text" value="{{data.system.streetname}}" placeholder="street name"/></h2>
+                    <select  class="selectrace flex0"  name="data.race.value"  data-type="String">
+                    {{#select data.system.race.value}}
+                        {{#each data.system.races as |race key|}}
+                        <option  value="{{key}}">{{race.label}}</option>
+                        {{/each}}
+                    {{/select}}
+                    </select>
+                </div>
+                <div class="flexcol flex1">
+                    {{> "systems/SR3/templates/actors/parts/actor-monitor-physic.html"}}
+                    {{> "systems/SR3/templates/actors/parts/actor-monitor-stun.html"}}
+                </div>
+            </div>
+        </header>
+    
+<section class="sheet-body">
+    <hr>
+    {{!-- ABILITIES --}}
+    {{> "systems/SR3/templates/actors/parts/actor-abilitites-cardridge.html"}}
+    <hr>
+    {{!-- ROLL MANAGER --}}
+    {{> "systems/SR3/templates/actors/parts/actor-rollmanager.html"}}
+    <hr>
+    <section class="section section--tabs flexshrink sr3char-nav">
+        <nav class="sheet-tabs tabs" data-group="primary">
+            <a class="item font-medium font-bold tab-header sr3char-nav-link" data-tab="fight" data-group="primary">{{localize 'SR3.actor.tab.fight'}}</a>
+            <a class="item font-medium font-bold tab-header sr3char-nav-link" data-tab="abilitites" data-group="primary">{{localize 'SR3.actor.tab.abilities'}}</a>
+            <a class="item font-medium font-bold tab-header sr3char-nav-link" data-tab="skills" data-group="primary">{{localize 'SR3.actor.tab.skills'}}</a>
+            <a class="item font-medium font-bold tab-header sr3char-nav-link" data-tab="weapons" data-group="primary">{{localize 'SR3.actor.tab.gear'}}</a>
+            <a class="item font-medium font-bold tab-header sr3char-nav-link" data-tab="equipement" data-group="primary">{{localize 'SR3.actor.tab.equipement'}}</a>
+            <a class="item font-medium font-bold tab-header sr3char-nav-link" data-tab="cyberware" data-group="primary">{{localize 'SR3.actor.tab.cyberware'}}</a>
+            <a class="item font-medium font-bold tab-header sr3char-nav-link" data-tab="magic" data-group="primary">{{localize 'SR3.actor.tab.magic'}}</a>
+        </nav>
+    </section>
+
+    {{!-- Character Sheet Body --}}
+    <section class="sheet-body section--tabs-content">
+        {{!-- FIGHT Tab --}}
+        <div class="tab fight" data-group="primary" data-tab="fight" >
+            {{> "systems/SR3/templates/actors/parts/character/character-fight.html"}}
+        </div>
+        {{!-- ATTRIBUTES Tab  --}}
+        <div class="tab abilitites" data-group="primary" data-tab="abilitites">
+            {{> "systems/SR3/templates/actors/parts/character/character-abilitites.html"}}
+        </div>
+        {{!-- SKILLS Tab --}}
+        <div class="tab skills" data-group="primary" data-tab="skills" >
+            {{> "systems/SR3/templates/actors/parts/character/character-skills.html"}}
+        </div>
+        {{!-- GEAR Tab --}}
+        <div class="tab weapons" data-group="primary" data-tab="weapons" >
+            {{> "systems/SR3/templates/actors/parts/character/character-weapons.html"}}
+        </div>
+        {{!-- EQUIPEMENT Tab --}}
+        <div class="tab equipement" data-group="primary" data-tab="equipement" >
+            {{> "systems/SR3/templates/actors/parts/character/character-equipement.html"}}
+        </div>
+        {{!-- CYBERWARE Tab --}}
+        <div class="tab cyberware" data-group="primary" data-tab="cyberware" >
+            {{> "systems/SR3/templates/actors/parts/character/character-cyberware.html"}}
+        </div>
+        {{!-- SPELLS Tab --}}
+        <div class="tab magic" data-group="primary" data-tab="magic" >
+            {{> "systems/SR3/templates/actors/parts/character/character-magic.html"}}
+        </div>
+    </section>
+</section>
+
+    
+</form>

@@ -1,0 +1,85 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="box-left">
+        {{> "systems/SR3/templates/actors/parts/spirit/spirit-identity.html"}}
+        <div>
+            {{> "systems/SR3/templates/actors/parts/actor-monitor-physic.html"}}
+            {{> "systems/SR3/templates/actors/parts/actor-monitor-stun.html"}}
+        </div>
+    </div>
+    {{!-- ABILITIES --}}
+    {{> "systems/SR3/templates/actors/parts/actor-abilitites-cardridge.html"}}
+
+    {{!-- ROLL MANAGER --}}
+    {{> "systems/SR3/templates/actors/parts/actor-rollmanager.html"}}
+
+    <div class="box">
+        <div>
+            <table style="width: 350px;">
+                <tr>
+                    <td><label for="">{{localize 'SR3.actor.init.label'}} : </label></td>
+                    <td>
+                        <select  class="selectinit"  name="data.initiative.value"  data-type="String">
+                            {{#select data.system.initiative.value}}
+                                {{#each data.system.initiatives as |init key|}}
+                                <option  value="{{init.value}}">{{init.label}}</option>
+                                {{/each}}
+                            {{/select}}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="">{{localize 'SR3.actor.init.physic'}}</label></td>
+                    <td>{{data.system.initiatives.street.value}}</td>
+                </tr>
+                <tr>
+                    <td><label for="">{{localize 'SR3.actor.init.astral'}}</label></td>
+                    <td>{{data.system.initiatives.astral.value}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <table style="width: 350px;">
+                <tr>
+                    <td>{{localize 'SR3.actor.spirit.attack'}}</td>
+                    <td style="width: 30px;">{{data.system.force}}</td>
+                    <td class="cell-left"><a class="roll-skill" data-skill-name="attack" data-skill-value="{{data.system.force}}" title="Roll skill"><i class="fas fa-dice"></i></a></td>
+                </tr>
+                <tr>
+                    <td>{{localize 'SR3.actor.spirit.damage'}}</td>
+                    <td style="width: 65px;">{{data.system.dmg}}</td>
+                </tr>
+                <tr>
+                    <td>{{localize 'SR3.actor.spirit.movespeed'}}</td>
+                    <td style="width: 30px;">{{data.system.mvt.value}}</td>
+                </tr>
+                
+            </table>
+        </div>
+    </div>
+
+    <table>
+        <tr>
+            <th>{{localize 'SR3.item.name'}}</th>
+            <th></th>
+            <th>{{localize 'SR3.item.magic.type.label'}}</th>
+            <th>{{localize 'SR3.item.magic.action.label'}}</th>
+            <th>{{localize 'SR3.item.magic.range.label'}}</th>
+            <th>{{localize 'SR3.item.magic.duration.label'}}</th>
+        </tr>
+        {{#each data.items as |item key|}}
+        {{#if (eq item.type "spiritpower")}}
+        <tr class="item icon-row" data-item-id="{{item._id}}" rel="tooltip" data-toggle="tooltip" title="{{item.system.description.value}}">
+            <td class="cell-left item-link edit-item">{{item.name}}</td>
+            <td class="cell-center" style="width: 15px;">       
+                <a class="delete-item delete-icon" title="Delete Item"><i class="fas fa-trash"></i></a>
+            </td>
+            <td class="cell-center">{{item.system.typelabel.value}}</td>
+            <td class="cell-center">{{item.system.actionlabel.value}}</td>
+            <td class="cell-center">{{item.system.rangelabel.value}}</td>
+            <td class="cell-center">{{item.system.durationlabel.value}}</td>
+        </tr>
+        {{/if}}
+        {{/each}}
+    </table>
+</form>

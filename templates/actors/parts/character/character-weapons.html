@@ -1,0 +1,136 @@
+<div class="flexcol">
+    {{!-- RANGED WEAPON --}}
+    <table>
+        <tr class="font-small sr3char-item-wp-th">
+            {{!--<th style="width: 32px;"></th>--}}
+            <th>{{localize 'SR3.item.weapon.ranged'}}</th>
+            <th></th>
+            <th style="width: 60px;">{{localize 'SR3.item.damage'}}</th>
+            <th style="width: 60px;">{{localize 'SR3.item.ranged.mode'}}</th>
+            <th style="width: 60px;">{{localize 'SR3.item.ranged.cap'}}</th>
+            <th style="width: 60px;">{{localize 'SR3.item.conceal'}}</th>
+            <th style="width: 60px;">{{localize 'SR3.item.weight'}}</th>
+            <th style="width: 120px;">{{localize 'SR3.item.ranged.range'}}</th>
+            <th style="width: 200px; margin-left: 10px;">{{localize 'SR3.item.special'}}</th>
+        </tr>
+    {{#each data.items as |item key|}}
+    {{#if (eq item.type "rangedweapon")}}
+        <tr class="item icon-row" data-item-id="{{item._id}}">
+            {{!-- 
+                <td><img src="{{item.img}}" title="{{item.name}}" height="32" width="32"/></td>
+                --}}
+            
+            
+            {{#if item.system.equipped}}
+            <td class="cell-left item-link edit-item"><i class="fas fa-check"></i>{{item.name}}</td>
+            {{else}}
+            <td class="cell-left item-link edit-item">{{item.name}}</td>
+            {{/if}}
+            <td class="cell-center" style="width: 20px;">
+                {{!--<a class="edit-item edit-icon" title="Edit Item"><i class="fas fa-edit"></i></a>--}}
+                <a class="delete-item delete-icon" title="Delete Item"><i class="fas fa-trash"></i></a>
+            </td>
+            <td class="cell-center">{{item.system.dmg.value}}</td>
+            <td class="cell-center">{{item.system.mode.value}}</td>
+            <td class="cell-center">{{item.system.capacity.value}}</td>
+            <td class="cell-center">{{item.system.conceal.value}}</td>
+            <td class="cell-center">{{item.system.weight.value}}</td>
+            <td class="cell-center">{{item.system.range.value}}</td>
+            <td>{{item.system.accessories.value}}</td>
+        </tr>
+    {{/if}}
+    {{/each}}
+    </table>
+    {{!-- MELEE WEAPONS --}}
+    <table>
+        <tr class="font-small sr3char-item-wp-th">
+            <th>{{localize 'SR3.item.weapon.melee'}}</th>
+            <th></th>
+            <th>{{localize 'SR3.item.damage'}}</th>
+            <th>{{localize 'SR3.item.melee.reach'}}</th>
+            <th>{{localize 'SR3.item.conceal'}}</th>
+            <th>{{localize 'SR3.item.weight'}}</th>
+            <th style="width: 200px; margin-left: 10px;">{{localize 'SR3.item.special'}}</th>
+        </tr>
+        {{#each data.items as |item key|}}
+        {{#if (eq item.type "meleeweapon")}}
+        <tr class="item icon-row" data-item-id="{{item._id}}">
+            {{#if item.system.equipped}}
+            <td class="cell-left item-link edit-item"><i class="fas fa-check"></i>{{item.name}}</td>
+            {{else}}
+            <td class="cell-left item-link edit-item">{{item.name}}</td>
+            {{/if}}
+            <td class="cell-center" style="width: 20px;">
+                <a class="delete-item delete-icon" title="Delete Item"><i class="fas fa-trash"></i></a>
+            </td>
+            <td class="cell-center">{{item.system.dmg.value}}</td>
+            <td class="cell-center">{{item.system.reach.value}}</td>
+            <td class="cell-center">{{item.system.conceal.value}}</td>
+            <td class="cell-center">{{item.system.weight.value}}</td>
+            <td>{{item.system.accessories.value}}</td>
+        </tr>
+        {{/if}}
+        {{/each}}
+    </table>
+    {{!-- ARMOR --}}
+    <table>
+        <tr class="font-small sr3char-item-wp-th">
+            <th>{{localize 'SR3.item.armor.name'}}</th>
+            <th></th>
+            <th>{{localize 'SR3.item.armor.balistic'}}</th>
+            <th>{{localize 'SR3.item.armor.impact'}}</th>
+            <th>{{localize 'SR3.item.conceal'}}</th>
+            <th>{{localize 'SR3.item.weight'}}</th>
+            <th style="width: 200px; margin-left: 10px;">{{localize 'SR3.item.special'}}</th>
+        </tr>
+        {{#each data.items as |item key|}}
+        {{#if (eq item.type "armor")}}
+        <tr class="item icon-row" data-item-id="{{item._id}}">
+            {{#if item.system.equipped}}
+            <td class="cell-left item-link edit-item"><i class="fas fa-check"></i>{{item.name}}</td>
+            {{else}}
+            <td class="cell-left item-link edit-item">{{item.name}}</td>
+            {{/if}}
+            <td class="cell-center" style="width: 20px;">
+                <a class="delete-item delete-icon" title="Delete Item"><i class="fas fa-trash"></i></a>
+            </td>
+            <td class="cell-center">{{item.system.balistic.value}}</td>
+            <td class="cell-center">{{item.system.impact.value}}</td>
+            <td class="cell-center">{{item.system.conceal.value}}</td>
+            <td class="cell-center">{{item.system.weight.value}}</td>
+            <td>{{item.system.accessories.value}}</td>
+        </tr>
+        {{/if}}
+        {{/each}}
+    </table>
+    {{!-- AMMUNITIONS --}}
+    <table style="width: 400px;">
+        <tr class="font-small sr3char-item-wp-th">
+            <th>{{localize 'SR3.item.armor.name'}}</th>
+            <th></th>
+            <th>Weapon</th>
+            <th>Qty</th>
+            <th>Weight</th>
+        </tr>
+        {{#each data.items as |item key|}}
+        {{#if (eq item.type "ammo")}}
+        <tr class="item icon-row" data-item-id="{{item._id}}">
+            {{#if item.system.equipped}}
+            <td class="cell-left item-link edit-item"><i class="fas fa-check"></i>{{item.system.ammotypelabel.value}}</td>
+            {{else}}
+            <td class="cell-left item-link edit-item">{{item.system.ammotypelabel.value}}</td>
+            {{/if}}
+            <td class="cell-center" style="width: 20px;">
+                <a class="delete-item delete-icon" title="Delete Item"><i class="fas fa-trash"></i></a>
+            </td>
+            <td class="cell-center">{{item.system.weapontypelabel.value}}</td>
+            <td class="cell-center">{{item.system.qty}}</td>
+            <td class="cell-center">{{item.system.weight.value}}</td>
+        </tr>
+        {{/if}}
+        {{/each}}
+    </table>
+</div>
+
+
+

@@ -1,0 +1,47 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="box-left">
+        {{!--
+            <div>
+                <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64"/>
+            </div>
+        --}}
+        
+        <div>
+            <table>
+                <tr>
+                    <th>{{localize 'SR3.item.equipped'}}</th>
+                    <th>{{localize 'SR3.item.ammo.ammotype'}}</th>
+                    <th>{{localize 'SR3.item.ammo.weapontype'}}</th>
+                    <th>{{localize 'SR3.item.ammo.qty'}}</th>
+                    <th>{{localize 'SR3.item.weight'}}</th>
+                </tr>
+        
+                <tr>
+                    <td class="cell-center"><input type="checkbox" name="data.equipped" {{checked  data.system.equipped}}></td>
+                    <td>
+                        <select  class="selectType"  name="data.ammotype"  data-type="">
+                            {{#select data.system.ammotype}}
+                                {{#each data.system.ammotypes as |ammo key|}}
+                                <option  value="{{key}}">{{ammo.label}}</option>
+                                {{/each}}
+                            {{/select}}
+                        </select>
+                    </td>
+                    <td>
+                        <select  class="selectweapon"  name="data.weapontype"  data-type="String">
+                            {{#select data.system.weapontype}}
+                                {{#each data.system.weapontypes as |weapontype key|}}
+                                <option  value="{{key}}">{{weapontype.label}}</option>
+                                {{/each}}
+                            {{/select}}
+                        </select>
+                    </td>
+                    <td class="cell-center"><input name="data.qty" type="text" value="{{data.system.qty}}" placeholder="" style="width: 40px;" data-dtype="Number"/></td>
+                    <td class="cell-center">{{data.system.weight}}</td>
+                </tr>
+            </table>
+            <span>{{data.system.spec}}</span>
+        </div>
+    </div>
+    
+</form>

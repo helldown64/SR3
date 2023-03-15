@@ -1,0 +1,102 @@
+
+    <div class="margin-left-20" style="width: 400px;">
+        
+        {{!-- Conditions 
+            <h2 class="font-small">{{localize 'SR3.actor.header.status'}}</h2>
+        <table class="">
+            <tr class="font-xsmall sr3-monitor-th">
+                <th style="width: 100px;"></th>
+                <th class="cell-center">{{localize 'SR3.actor.header.l'}}</th>
+                <th class="cell-center"></th>
+                <th class="cell-center">{{localize 'SR3.actor.header.m'}}</th>
+                <th class="cell-center"></th>
+                <th class="cell-center"></th>
+                <th class="cell-center">{{localize 'SR3.actor.header.s'}}</th>
+                <th class="cell-center"></th>
+                <th class="cell-center"></th>
+                <th class="cell-center"></th>
+                <th class="cell-center">{{localize 'SR3.actor.header.f'}}</th>
+            </tr>
+            <tr class="font-small">
+                <td class="cell-center">{{localize 'SR3.actor.header.physic'}}</td>
+                {{#each data.system.condition.physic as |case key|}}
+                    {{#if case.value}}
+                <td th class="cell-center"><i class="fas fa-check-square"></i></td>
+                    {{else}}
+                <td th class="cell-center"><i class="far fa-square"></i></i></td>
+                    {{/if}}
+                {{/each}}
+            </tr>
+        </table>
+        <table>
+            <tr class="font-xsmall sr3-monitor-th">
+                <th style="width: 100px;"></th>
+                <th class="cell-center">{{localize 'SR3.actor.header.l'}}</th>
+                <th class="cell-center"></th>
+                <th class="cell-center">{{localize 'SR3.actor.header.m'}}</th>
+                <th class="cell-center"></th>
+                <th class="cell-center"></th>
+                <th class="cell-center">{{localize 'SR3.actor.header.s'}}</th>
+                <th class="cell-center"></th>
+                <th class="cell-center"></th>
+                <th class="cell-center"></th>
+                <th class="cell-center">{{localize 'SR3.actor.header.f'}}</th>
+            </tr>
+            <tr class="font-small">
+                <td class="cell-center">{{localize 'SR3.actor.header.stun'}}</td>
+                {{#each data.system.condition.stun as |case key|}}
+                    {{#if case.value}}
+                <td th class="cell-center"><i class="fas fa-check-square"></i></td>
+                    {{else}}
+                <td th class="cell-center"><i class="far fa-square"></i></i></td>
+                    {{/if}}
+                {{/each}}
+            </tr>
+        </table>
+        --}}
+
+        <table>
+            <tr class="font-small sr3-monitor-th">
+                <th style="width: 100px;"></th>
+                <th class="cell-center">{{localize 'SR3.actor.header.l'}}</th>
+                <th class="cell-center"></th>
+                <th class="cell-center">{{localize 'SR3.actor.header.m'}}</th>
+                <th class="cell-center"></th>
+                <th class="cell-center"></th>
+                <th class="cell-center">{{localize 'SR3.actor.header.s'}}</th>
+                <th class="cell-center"></th>
+                <th class="cell-center"></th>
+                <th class="cell-center"></th>
+                <th class="cell-center">{{localize 'SR3.actor.header.f'}}</th>
+            </tr>
+            <tr class="font-small">
+                <td class="cell-center" style="width: 100px;">{{localize 'SR3.actor.header.physic'}}</td>
+            {{#each actor.system.condition.physic as |case key|}}
+            <td class="cell-center"><input type="checkbox" name="data.condition.physic.{{key}}.value" {{checked  case.value}}></td>
+            {{/each}}
+            </tr>
+        </table>
+
+        <table>
+            <tr class="font-small sr3-monitor-th">
+                <th style="width: 100px;"></th>
+                <th class="cell-center">{{localize 'SR3.actor.header.l'}}</th>
+                <th class="cell-center"></th>
+                <th class="cell-center">{{localize 'SR3.actor.header.m'}}</th>
+                <th class="cell-center"></th>
+                <th class="cell-center"></th>
+                <th class="cell-center">{{localize 'SR3.actor.header.s'}}</th>
+                <th class="cell-center"></th>
+                <th class="cell-center"></th>
+                <th class="cell-center"></th>
+                <th class="cell-center">{{localize 'SR3.actor.header.f'}}</th>
+            </tr>
+            <tr class="font-small">
+                <td class="cell-center" style="width: 100px !important;">{{localize 'SR3.actor.header.stun'}}</td>
+            {{#each actor.system.condition.stun as |case key|}}
+            <td class="cell-center"><input type="checkbox" name="data.condition.stun.{{key}}.value" {{checked  case.value}} style="width: 20px; height: 20px;"></td>
+            {{/each}}
+            </tr>
+        </table>
+
+    </div>

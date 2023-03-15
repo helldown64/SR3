@@ -1,0 +1,75 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="box-left">
+        {{!-- Portrait --}}
+        <div>
+            <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="110" width="110"/>
+        </div>
+        <div class="box-column margin-left-20">
+            <h1><input name="name" type="text" value="{{actor.name}}" placeholder="actor name"/></h1>
+            <h2><input name="data.deck.value" type="text" value="{{data.system.deck.value}}" placeholder="Cyberdeck"/></h2>
+            <table>
+                <tr>
+                    <td class="font-medium" style="width: 170px;">{{localize 'SR3.actor.avatar.mpcplevel'}}</td>
+                    <td class="cell-center"><input name="data.mpcp.value" type="number" value="{{data.system.mpcp.value}}" placeholder="" style="width: 40px; display: inline-block;"data-type="Number"/></td>
+                </tr>
+            </table>
+        </div>
+        <div style="width: 400px;">
+            {{> "systems/SR3/templates/actors/parts/actor-monitor-physic.html"}}
+        </div>
+    </div>
+    <hr>
+    <table>
+        <tr class="sr3-cardridge-th">
+            <th>{{localize 'SR3.actor.ability.rea'}}</th>
+            <th>{{localize 'SR3.actor.avatar.body'}}</th>
+            <th>{{localize 'SR3.actor.avatar.escape'}}</th>
+            <th>{{localize 'SR3.actor.avatar.mask'}}</th>
+            <th>{{localize 'SR3.actor.avatar.sensor'}}</th>
+            <th>{{localize 'SR3.actor.avatar.Hardening'}}</th>
+            <th>{{localize 'SR3.actor.avatar.ram'}}</th>
+            <th>{{localize 'SR3.actor.avatar.storage'}}</th>
+            <th>{{localize 'SR3.actor.avatar.io'}}</th>
+            <th>{{localize 'SR3.actor.avatar.response'}}</th>
+            <th>{{localize 'SR3.actor.init.label'}}</th>
+            <th>{{localize 'SR3.actor.avatar.df'}}</th>
+            
+        </tr>
+        <tr class="cell-center font-bold font-medium">
+            <td>{{data.system.rea.value}}</td>
+            <td>{{data.system.body.value}}</td>
+            <td>{{data.system.escape.value}}</td>
+            <td>{{data.system.mask.value}}</td>
+            <td>{{data.system.sensor.value}}</td>
+            <td>{{data.system.hardening.value}}</td>
+            <td>{{data.system.ram.value}}</td>
+            <td>{{data.system.storage.value}}</td>
+            <td>{{data.system.io.value}}</td>
+            <td>{{data.system.response.value}}</td>
+            <td>{{data.system.initiative.value}}</td>
+            <td>{{data.system.fd.value}}</td>
+            {{!--  --}}
+            
+        </tr>
+    </table>
+    {{!-- ROLL MANAGER --}}
+    {{> "systems/SR3/templates/actors/parts/actor-rollmanager.html"}}
+    <section class="section section--tabs flexshrink sr3char-nav">
+        <nav class="sheet-tabs tabs" data-group="primary">
+            <a class="item font-medium font-bold tab-header sr3char-nav-link" data-tab="stats" data-group="primary">{{localize 'SR3.actor.tab.stat'}}</a>
+            <a class="item font-medium font-bold tab-header sr3char-nav-link" data-tab="skills" data-group="primary">{{localize 'SR3.actor.tab.softwares'}}</a>
+        </nav>
+    </section>
+    {{!-- Character Sheet Body --}}
+    <section class="sheet-body section--tabs-content">
+        {{!-- Statistiques Tab --}}
+        <div class="tab stats" data-group="primary" data-tab="stats" >
+            {{> "systems/SR3/templates/actors/parts/avatar/avatar-stats.html"}}
+        </div>
+        {{!-- Softwares Tab  --}}
+        <div class="tab skills" data-group="primary" data-tab="skills">
+            {{> "systems/SR3/templates/actors/parts/avatar/avatar-software.html"}}
+        </div>
+    </section>
+
+</form>

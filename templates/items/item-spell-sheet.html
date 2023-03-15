@@ -1,0 +1,53 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <h2><input name="name" type="text" value="{{item.name}}" placeholder="power name" style="width: 250px;"/></h2>
+    <table>
+        <tr>
+            <th>{{localize 'SR3.item.index'}}</th>
+            <th>{{localize 'SR3.item.magic.type.label'}}</th>
+            <th>{{localize 'SR3.item.magic.action.label'}}</th>
+            <th>{{localize 'SR3.item.magic.range.label'}}</th>
+            <th>{{localize 'SR3.item.magic.duration.label'}}</th>
+        </tr>
+        <tr>
+            <td class="cell-center"><input name="data.index.value" type="number" value="{{data.system.index.value}}" placeholder="" style="width: 30px;"/></td>
+            <td class="cell-center">
+                <select  class="selecttype"  name="data.type.value"  data-type="String">
+                    {{#select data.system.type.value}}
+                        {{#each data.system.types as |type key|}}
+                        <option  value="{{key}}">{{type.value}}</option>
+                        {{/each}}
+                    {{/select}}
+                </select>
+            </td>
+            <td class="cell-center">
+                <select  class="selectaction"  name="data.action.value"  data-type="String">
+                    {{#select data.system.action.value}}
+                        {{#each data.system.actions as |action key|}}
+                        <option  value="{{key}}">{{action.value}}</option>
+                        {{/each}}
+                    {{/select}}
+                </select>
+            </td>
+            <td class="cell-center">
+                <select  class="selectrange"  name="data.range.value"  data-type="String">
+                    {{#select data.system.range.value}}
+                        {{#each data.system.ranges as |range key|}}
+                        <option  value="{{key}}">{{range.value}}</option>
+                        {{/each}}
+                    {{/select}}
+                </select>
+            </td>
+            <td class="cell-center">
+                <select  class="selectduration"  name="data.duration.value"  data-type="String">
+                    {{#select data.system.duration.value}}
+                        {{#each data.system.durations as |duration key|}}
+                        <option  value="{{key}}">{{duration.value}}</option>
+                        {{/each}}
+                    {{/select}}
+                </select>
+            </td>
+        </tr>
+    </table>
+    <textarea name="data.description.value" id="" cols="30" rows="5">{{data.system.description.value}}</textarea>
+
+</form>

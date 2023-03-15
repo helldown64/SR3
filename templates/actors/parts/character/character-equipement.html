@@ -1,0 +1,29 @@
+<table>
+    <tr class="sr3char-item-eq-th">
+        <th style="width: 120px;">{{localize 'SR3.item.name'}}</th>
+        <th></th>
+        <th style="width: 60px;">{{localize 'SR3.item.index'}}</th>
+        <th style="width: 60px;">{{localize 'SR3.item.conceal'}}</th>
+        <th style="width: 60px;">{{localize 'SR3.item.weight'}}</th>
+        <th style="width: 200px; margin-left: 10px;">{{localize 'SR3.item.special'}}</th>
+    </tr>
+    {{#each data.items as |item key|}}
+    {{#if (eq item.type "equipement")}}
+    <tr class="item icon-row" data-item-id="{{item._id}}">
+        {{#if item.system.equipped}}
+        <td class="cell-left item-link edit-item"><i class="fas fa-check"></i>{{item.name}}</td>
+        {{else}}
+        <td class="cell-left item-link edit-item">{{item.name}}</td>
+        {{/if}}
+        <td class="cell-center" style="width: 20px;">
+            <a class="delete-item delete-icon" title="Delete Item"><i class="fas fa-trash"></i></a>
+        </td>
+        <td class="cell-center">{{item.system.index.value}}</td>
+        <td class="cell-center">{{item.system.conceal.value}}</td>
+        <td class="cell-center">{{item.system.weight.value}}</td>
+        <td>{{item.system.effect.value}}</td>
+    </tr>
+
+    {{/if}}
+    {{/each}}
+</table>

@@ -1,0 +1,34 @@
+{
+    "name": "SR3",
+    "title": "Shadowrun Third Edition",
+    "description": "The Shadowrun third Edition system",
+    "version": "1.0.2",
+    "minimumCoreVersion": "9",
+    "compatibleCoreVersion": "10",
+    "templateVersion": 2,
+    "author": "Helldown",
+    "esmodules": ["module/SR3.js"],
+    "styles": ["css/SR3.css"],
+    "scripts": [],
+    "packs": [],
+    "languages": [
+      {
+        "lang":"en",
+        "name":"English",
+        "path":"lang/en.json"
+      },
+      {
+        "lang":"fr",
+        "name":"French",
+        "path":"lang/fr.json"
+      }
+    ],
+    "gridDistance": 1.5,
+    "gridUnits": "m",
+    "primaryTokenAttribute": "hpPh",
+    "secondaryTokenAttribute": "hpEt",
+    "url": "",
+    "manifest": "",
+    "download": "",
+    "license": "LICENSE.txt"
+  }

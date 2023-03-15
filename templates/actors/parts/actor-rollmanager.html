@@ -1,0 +1,32 @@
+<table>
+    <tr>
+        <td><input type="checkbox" id="chbox" name="data.activewound" {{checked  data.system.activewound}}></td>
+        <td><label for="chbox">{{localize 'SR3.actor.enableCondition'}}</label></td> 
+        <td class="cell-right" ><label for="">{{localize 'SR3.treshold'}}</label></td>
+        <td>
+            <select  class="selectSR"  name="data.sr.value"  data-type="Number">
+                {{#select data.system.sr.value}}
+                    {{#each data.system.selectSR as |sr key|}}
+                    <option  value="{{key}}">{{sr.value}}</option>
+                    {{/each}}
+                {{/select}}
+            </select>
+        </td>
+        {{!-- 
+        <td class="cell-center"><input name="data.sr.value" type="text" value="{{data.system.sr.value}}" placeholder="" style="width: 30px;" data-dtype="Number"/></td>
+        --}}
+        <td class="cell-right"><label for="">{{localize 'SR3.dicereserve'}}</label></td>
+        <td class="cell-center"><input name="data.modif.value" type="text" value="{{data.system.modif.value}}" placeholder="" style="width: 30px;" data-dtype="Number"/></td>
+        
+        {{!--
+        <td class="cell-right"><label for="">defense</label></td>
+        <td class="cell-center"><a class="roll-def" title="Roll skill"><i class="fas fa-dice"></i></a></td>
+        --}}
+        <td class="cell-right"><input name="data.neutral.value" type="text" value="{{data.system.neutral.value}}" placeholder="Neutre" style="width: 150px;"/></td>
+        <td class="cell-center"><a class="roll-skill" data-skill-name="{{data.system.neutral.value}}" data-skill-value="0" title="Roll skill"><i class="fas fa-dice"></i></a></td>
+        <td class="cell-right"><label for="">Lancer karma</label></td>
+        <td class="cell-center"><a class="roll-karma" data-skill-name="{{data.system.neutral.value}}" data-skill-value="0" title="Roll skill"><i class="sr3-dice fas fa-dice"></i></a></td>
+    </tr>
+
+    
+</table>

@@ -1,0 +1,80 @@
+<div class="flexrow">
+    <div>
+        <table style="width: 400px;">
+            <tr class="sr3char-item-fi-th">
+                <th>{{localize 'SR3.actor.init.label'}}</th>
+                <th>{{localize 'SR3.score'}}</th>
+            </tr>
+            <tr>
+                <td>{{localize 'SR3.actor.init.label'}}</td>
+                <td class="cell-center">
+                    <select  class="selectinit"  name="data.initiative.value"  data-type="String" style="width: 80px;">
+                        {{#select data.system.initiative.value}}
+                            {{#each data.system.initiatives as |init key|}}
+                            <option  value="{{init.value}}">{{init.label}}</option>
+                            {{/each}}
+                        {{/select}}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>{{localize 'SR3.actor.init.street'}}</td>
+                <td class="cell-center"><input name="data.initiatives.street.value" type="text" value="{{data.system.initiatives.street.value}}" placeholder="" style="width: 80px;"/></td>
+            </tr>
+            <tr>
+                <td>{{localize 'SR3.actor.init.cyber'}}</td>
+                <td class="cell-center"><input name="data.initiatives.cyber.value" type="text" value="{{data.system.initiatives.cyber.value}}" placeholder="" style="width: 80px;"/></td>
+            </tr>
+            <tr>
+                <td>{{localize 'SR3.actor.init.magic'}}</td>
+                <td class="cell-center"><input name="data.initiatives.magic.value" type="text" value="{{data.system.initiatives.magic.value}}" placeholder="" style="width: 80px;"/></td>
+            </tr>
+            <tr>
+                <td>{{localize 'SR3.actor.init.astral'}}</td>
+                <td class="cell-center"><input name="data.initiatives.astral.value" type="text" value="{{data.system.initiatives.astral.value}}" placeholder="" style="width: 80px;"/></td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        <table style="width: 400px;">
+            <tr class="sr3char-item-fi-th">
+                <th>{{localize 'SR3.reserve'}}</th>
+                <th>{{localize 'SR3.score'}}</th>
+            </tr>
+            <tr>
+                <td>{{localize 'SR3.actor.reserve.fight'}}</td>
+                <td class="cell-center" style="width: 40px;"><input name="data.reserves.fight.value" type="number" value="{{data.system.reserves.fight.value}}" data-dtype="Number"/></td>
+            </tr>
+            <tr>
+                <td>{{localize 'SR3.actor.reserve.magic'}}</td>
+                <td class="cell-center" style="width: 40px;"><input name="data.reserves.magic.value" type="number" value="{{data.system.reserves.magic.value}}" data-dtype="Number"/></td>
+            </tr>
+            <tr>
+                <td>{{localize 'SR3.actor.reserve.astral'}}</td>
+                <td class="cell-center" style="width: 40px;"><input name="data.reserves.astral.value" type="number" value="{{data.system.reserves.astral.value}}"data-dtype="Number"/></td>
+            </tr>
+            <tr>
+                <td>{{localize 'SR3.actor.reserve.rigger'}}</td>
+                <td class="cell-center" style="width: 40px;"><input name="data.reserves.rigger.value" type="number" value="{{data.system.reserves.rigger.value}}"data-dtype="Number"/></td>
+            </tr>
+            <tr>
+                <td>{{localize 'SR3.actor.reserve.decker'}}</td>
+                <td class="cell-center" style="width: 40px;"><input name="data.reserves.decker.value" type="number" value="{{data.system.reserves.decker.value}}"data-dtype="Number"/></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<label for="">{{localize 'SR3.actor.load'}} : </label><span>{{data.system.currentweight}}/{{data.system.maxweight}}</span><br/>
+
+    
+
+    
+
+    
+            
+            
+            
+            
+
+

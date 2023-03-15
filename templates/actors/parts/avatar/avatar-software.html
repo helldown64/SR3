@@ -1,0 +1,39 @@
+<span>{{localize 'SR3.actor.avatar.freeram'}} : </span>{{data.system.freeram.value}} / {{data.system.ram.value}} MP
+<table style="width: 280px;">
+    <tr>
+        <td style="width: 250px;" class="cell-left">{{localize 'SR3.actor.avatar.hacking'}}</td>
+        <td class="cell-center">{{data.system.hacking.value}}</td>
+        <td class="cell-center" style="width: 25px;">
+            <a class="roll-skill" data-skill-name="{{data.system.hacking.label}}" data-skill-value="{{data.system.hacking.value}}" title="Roll skill"><i class="fas fa-dice"></i></a>
+        </td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <th style="width: 120px;">{{localize 'SR3.item.name'}}</th>
+        <th></th>
+        <th style="width: 60px;">{{localize 'SR3.item.index'}}</th>
+        <th style="width: 60px;">{{localize 'SR3.item.decker.multi'}}</th>
+        <th style="width: 60px;">{{localize 'SR3.item.decker.mp'}}</th>
+        <th style="width: 200px; margin-left: 10px;">Effects</th>
+    </tr>
+    {{#each data.items as |item key|}}
+    {{#if (eq item.type "software")}}
+    <tr class="item icon-row" data-item-id="{{item._id}}">
+        {{#if item.system.equipped}}
+        <td class="cell-left item-link edit-item"><i class="fas fa-check"></i>{{item.name}}</td>
+        {{else}}
+        <td class="cell-left item-link edit-item">{{item.name}}</td>
+        {{/if}}
+        <td class="cell-center" style="width: 20px;">
+            <a class="delete-item delete-icon" title="Delete Item"><i class="fas fa-trash"></i></a>
+        </td>
+        <td class="cell-center">{{item.system.index.value}}</td>
+        <td class="cell-center">{{item.system.multi.value}}</td>
+        <td class="cell-center">{{item.system.size.value}}</td>
+        <td>{{item.system.effect.value}}</td>
+
+    </tr>
+    {{/if}}
+    {{/each}}
+</table>
